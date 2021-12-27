@@ -19,12 +19,12 @@ public class Hash
   public static void main(String args[]) {
     try {
       Start start =  new Hash(new java.io.StringReader(
-      "require java lang.\n" +
-      "def var = 13.\n" +
-      "while var > 0  do\n" +
+      "$require java lang.\n" +
+      "$var var = 13.\n" +
+      "$while var > 0  $do\n" +
       "System:out:println( var ).\n" +
       "var = var - 1.\n" +
-      "stop.\n"
+      "$end.\n"
       ) ).Start();
       start.accept( new DepthFirstVisitor () );
       System.out.println("Right! no errors founded! =)");
